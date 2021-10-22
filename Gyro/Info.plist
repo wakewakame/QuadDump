@@ -2,30 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<!--Info.plistの設定が反映されない場合はiOSを再起動することで解決できる場合がある-->
-
-	<!--カメラへのアクセス権限を得る-->
-	<key>NSCameraUsageDescription</key>
-	<string>We use your camera to record movie</string>
-
-	<!--GPSへのアクセス権限を得る-->
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We use your location to record trajectory</string>
-	<key>NSLocationTemporaryUsageDescriptionDictionary</key>
-	<dict>
-		<key>trajectory</key>
-		<string>We use your location to record trajectory</string>
-	</dict>
-
-	<!--ファイルアプリから/Documentsの内容を表示できるようにする-->
-	<key>LSSupportsOpeningDocumentsInPlace</key><true/>
-	<key>UIFileSharingEnabled</key><true/>
-
-	<!--ダークテーマを使用する-->
-	<key>UIUserInterfaceStyle</key>
-	<string>Dark</string>
-
-	<!--以降はXcodeが生成したデフォルトの設定-->
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -44,12 +20,25 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>We use your camera to record movie</string>
+	<key>NSLocationTemporaryUsageDescriptionDictionary</key>
+	<dict>
+		<key>trajectory</key>
+		<string>We use your location to record trajectory</string>
+	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We use your location to record trajectory</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<true/>
 	</dict>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+	<key>UIFileSharingEnabled</key>
 	<true/>
 	<key>UILaunchScreen</key>
 	<dict/>
@@ -70,5 +59,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Dark</string>
 </dict>
 </plist>

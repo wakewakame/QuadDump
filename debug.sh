@@ -71,17 +71,17 @@ fi
 declare DESTINATION_ID=$(echo "$DEVICE_NAME" | egrep -oi -e '\([0-9A-F\\-]+\)$' | egrep -oi -e '[0-9A-F\\-]+')
 
 xcodebuild \
-	-project "QuadDump.xcodeproj" \
-	-scheme "QuadDump" \
+	-project "Gyro.xcodeproj" \
+	-scheme "Gyro" \
 	-destination "generic/platform=iOS" \
 	-configuration "${CONFIGURATION:-Debug}" \
-	-archivePath "build/QuadDump.xcarchive" \
+	-archivePath "build/Gyro.xcarchive" \
 	archive \
 	-quiet
 
 if which ios-deploy ; then
 	# 実機でのデバッグ実行
-	ios-deploy --bundle ./build/QuadDump.xcarchive/Products/Applications/QuadDump.app --debug --id $DESTINATION_ID
+	ios-deploy --bundle ./build/Gyro.xcarchive/Products/Applications/Gyro.app --debug --id $DESTINATION_ID
 else
 	echo "ios-deployがインストールされていないので、実機でのデバッグ実行は行いません"
 fi

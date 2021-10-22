@@ -1,8 +1,8 @@
-name: QuadDump
+name: Gyro
 
 targets:
-  QuadDump:
-    sources: QuadDump
+  Gyro:
+    sources: Gyro
     platform: iOS
     type: application
     settings:
