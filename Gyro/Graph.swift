@@ -7,9 +7,9 @@ struct Graph: View {
     let title: String
 
     var body: some View {
-        ZStack {
-            GraphShape(values: values).stroke(Color(hex: 0xfe3b30), lineWidth: 4)
-            Text(title)
+        ZStack(alignment: .center) {
+            GraphShape(values: values).stroke(Color(hex: color), lineWidth: 2).border(Color(hex: color))
+            VStack() { HStack() { Text(title); Spacer() }; Spacer() }
         }
     }
 }
@@ -22,12 +22,12 @@ struct GraphShape: Shape {
             if values.count <= 1 { return }
             for (i, value) in values.enumerated() {
                 let x: CGFloat = CGFloat(rect.width) * CGFloat(i) / CGFloat(values.count - 1)
-                let y: CGFloat = CGFloat(rect.midY) - 0.5 * CGFloat(rect.height) * CGFloat(value)
+                let y: CGFloat = CGFloat(rect.midY) - 0.5 * CGFloat(rect.height) * min(max(CGFloat(value), -1.0), 1.0)
                 if i == 0 {
                     path.move(to: CGPoint(x: x, y: y))
                 }
                 else {
-                    path.addLine( to: CGPoint(x: x, y: y))
+                    path.addLine(to: CGPoint(x: x, y: y))
                 }
             }
         }

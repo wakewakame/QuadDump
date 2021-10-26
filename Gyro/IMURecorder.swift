@@ -1,4 +1,5 @@
 import CoreMotion
+import SwiftUI
 
 struct IMUPreview {
     let gravity         : (Double, Double, Double)
@@ -6,6 +7,7 @@ struct IMUPreview {
     let attitude        : (Double, Double, Double)
     let rotationRate    : (Double, Double, Double)
     let timestamp       : TimeInterval
+    var estimated3Axis  : (Double, Double, Double) = (0.0, 0.0, 0.0)
     
     init() {
         gravity = (0.0, 0.0, 0.0)
