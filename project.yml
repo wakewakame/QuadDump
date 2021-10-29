@@ -7,14 +7,14 @@ targets:
     type: application
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: "wakewakame.QuadDump"
+        PRODUCT_BUNDLE_IDENTIFIER: "wakewakame.tmp.Gyro"
         CODE_SIGN_STYLE: Manual
       configs:
         debug:
           CODE_SIGN_IDENTITY: iPhone Developer
-          PROVISIONING_PROFILE_SPECIFIER: QuadDumpProvisioningProfileDebug
+          PROVISIONING_PROFILE_SPECIFIER: DevTemporary
           DEVELOPMENT_TEAM: 67762NVFY8
         release:
-          CODE_SIGN_IDENTITY: iPhone Distribution
-          PROVISIONING_PROFILE_SPECIFIER: QuadDumpProvisioningProfile
+          CODE_SIGN_IDENTITY: iPhone Develop
+          PROVISIONING_PROFILE_SPECIFIER: DevTemporary
           DEVELOPMENT_TEAM: 67762NVFY8
